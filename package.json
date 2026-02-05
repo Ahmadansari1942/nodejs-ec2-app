@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-ec2-app",
+  "name": "task-manager-app",
   "version": "1.0.0",
-  "description": "Simple Node.js application for EC2 deployment",
+  "description": "Full-featured Task Manager Application with Authentication",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -11,12 +11,19 @@
   "keywords": [
     "nodejs",
     "express",
+    "task-manager",
+    "authentication",
     "ec2"
   ],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "ejs": "^3.1.9",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
