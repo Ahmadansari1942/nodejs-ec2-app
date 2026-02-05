@@ -1,0 +1,26 @@
+[Unit]
+Description=Node.js Application
+Documentation=https://github.com/yourusername/your-repo
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/your-repo
+ExecStart=/usr/bin/node /home/ec2-user/your-repo/app.js
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodeapp
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
