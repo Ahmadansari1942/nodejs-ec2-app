@@ -5,7 +5,6 @@ router.get('/tasks', (req, res) => {
   res.send('Tasks Page');
 });
 
-module.exports = router;
 router.get('/', (req, res) => {
   res.render('tasks'); // tasks.ejs
 });
