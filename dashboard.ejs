@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">📋 Task Manager</a>
+            </div>
+            <div class="nav-menu">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/tasks">My Tasks</a>
+                <a href="/tasks/create" class="btn btn-primary">+ New Task</a>
+                <span class="user-info">👤 <%= user.username %></span>
+                <a href="/auth/logout" class="btn btn-secondary">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome back, <%= user.username %>! 👋</h1>
+                <p class="subtitle">Here's your productivity overview</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-content">
+                        <h3 id="total-tasks">0</h3>
+                        <p>Total Tasks</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3 id="completed-tasks">0</h3>
+                        <p>Completed</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-content">
+                        <h3 id="pending-tasks">0</h3>
+                        <p>Pending</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔄</div>
+                    <div class="stat-content">
+                        <h3 id="inprogress-tasks">0</h3>
+                        <p>In Progress</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="/tasks/create" class="action-btn">
+                        <span class="action-icon">➕</span>
+                        <span>Create New Task</span>
+                    </a>
+                    <a href="/tasks" class="action-btn">
+                        <span class="action-icon">📝</span>
+                        <span>View All Tasks</span>
+                    </a>
+                    <a href="/api/info" class="action-btn">
+                        <span class="action-icon">ℹ️</span>
+                        <span>API Information</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">✅</div>
+                        <div class="activity-content">
+                            <p><strong>Task Completed</strong></p>
+                            <p class="activity-time">2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">➕</div>
+                        <div class="activity-content">
+                            <p><strong>New Task Created</strong></p>
+                            <p class="activity-time">5 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">✏️</div>
+                        <div class="activity-content">
+                            <p><strong>Task Updated</strong></p>
+                            <p class="activity-time">1 day ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Task Manager App. Made with ❤️ using Node.js</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

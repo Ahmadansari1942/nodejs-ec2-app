@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">📋 Task Manager</a>
+            </div>
+            <div class="nav-menu">
+                <a href="/">Home</a>
+                <a href="/auth/register" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Login to Your Account</h2>
+                
+                <% if (error) { %>
+                    <div class="alert alert-error">
+                        <%= error %>
+                    </div>
+                <% } %>
+
+                <form action="/auth/login" method="POST" class="auth-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="/auth/register">Sign up here</a></p>
+                    <p class="demo-info">
+                        <strong>Demo Account:</strong><br>
+                        Email: admin@example.com<br>
+                        Password: admin123
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Task Manager App. Made with ❤️ using Node.js</p>
+        </div>
+    </footer>
+</body>
+</html>

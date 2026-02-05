@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">📋 Task Manager</a>
+            </div>
+            <div class="nav-menu">
+                <% if (user) { %>
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/tasks">My Tasks</a>
+                    <a href="/tasks/create" class="btn btn-primary">+ New Task</a>
+                    <span class="user-info">👤 <%= user.username %></span>
+                    <a href="/auth/logout" class="btn btn-secondary">Logout</a>
+                <% } else { %>
+                    <a href="/auth/login">Login</a>
+                    <a href="/auth/register" class="btn btn-primary">Sign Up</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="hero">
+            <div class="container">
+                <h1>Welcome to Task Manager</h1>
+                <p class="lead">Organize your tasks efficiently and boost your productivity</p>
+                <div class="hero-buttons">
+                    <% if (user) { %>
+                        <a href="/dashboard" class="btn btn-primary btn-lg">Go to Dashboard</a>
+                        <a href="/tasks" class="btn btn-secondary btn-lg">View Tasks</a>
+                    <% } else { %>
+                        <a href="/auth/register" class="btn btn-primary btn-lg">Get Started</a>
+                        <a href="/auth/login" class="btn btn-secondary btn-lg">Login</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <h3>Task Management</h3>
+                        <p>Create, edit, and delete tasks easily</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure Authentication</h3>
+                        <p>Your data is safe with encrypted passwords</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Track Progress</h3>
+                        <p>Monitor your task completion status</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast & Responsive</h3>
+                        <p>Lightning-fast performance on any device</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Task Manager App. Made with ❤️ using Node.js</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
