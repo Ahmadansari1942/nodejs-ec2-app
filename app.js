@@ -90,34 +90,7 @@ app.listen(PORT, () => {
 
 
 
-// Middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
 
-// View engine setup
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// Routes import
-const authRoutes = require('./routes/auth');
-const taskRoutes = require('./routes/tasks');
-const apiRoutes = require('./routes/api');
-
-// Use routes
-app.use('/auth', authRoutes);
-app.use('/tasks', taskRoutes);
-app.use('/api', apiRoutes);
-
-// Default route
-app.get('/', (req, res) => {
-  res.render('index'); // views/index.ejs
-});
-
-// 404 route
-app.use((req, res) => {
-  res.status(404).render('404');
-});
 
 app.listen(3000, () => {
   console.log('Server running on http://localhost:3000');
